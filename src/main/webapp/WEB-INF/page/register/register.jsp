@@ -168,13 +168,14 @@
                     <div class="item col-xs-12">
                         <span class="intelligent-label f-fl">&nbsp;</span>    
                         <div class="f-fl item-ifo">
-                           <a href="javascript:;" class="btn btn-blue f-r3" id="btn_part3">注册</a>                         
+                        <!--    <a href="javascript:;" class="btn btn-blue f-r3" id="btn_part3">注册</a> -->
+                           	<input class="btn btn-blue f-r3" id="btn_part3" type="submit" value="注册">                         
                         </div>
                     </div>
                 </div>  
                 <div class="part4 text-center" style="display:none">
                 	<div id="successInfo"></div>
-                    <p class="c-666 f-mt30 f-mb50">页面将在 <strong id="times" class="f-size18">10</strong> 秒钟后，跳转到 <a href="http://www.17sucai.com/" class="c-blue">用户中心</a></p>
+                    <p class="c-666 f-mt30 f-mb50">页面将在 <strong id="times" class="f-size18">10</strong> 秒钟后，跳转到 <a href="/ABlastOfHeFei/user/main" class="c-blue">用户中心</a></p>
                 </div>          
             </div>
             </sf:form>
@@ -209,7 +210,7 @@ $(function(){
 	});	
 	//第三页的确定按钮
 	$("#btn_part3").click(function(){			
-		if(!verifyCheck._click()) return;
+		/* if(!verifyCheck._click()) return;
 		$(".part3").hide();
 		$(".part4").show();
 		$(".step li").eq(2).addClass("on");
@@ -222,7 +223,7 @@ $(function(){
 			after:function(){
 				window.location.href="/ABlastOfHeFei/user/main";		
 			}
-		});		
+		});		 */
 	});	
 });
 function showoutc(){$(".m-sPopBg,.m-sPopCon").show();}

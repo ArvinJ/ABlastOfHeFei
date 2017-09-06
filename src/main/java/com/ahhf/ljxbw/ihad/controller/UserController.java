@@ -75,7 +75,13 @@ public class UserController {
 		user.setEmail("xxxx@zwj.com");
 		user.setStatus(0);
 		user.setCreateDateTime(sdf.format(new Date()));
-		findUserMapper().addUser(user);
+		SqlSessionFactory sqlSessionFactory = SqlSessionFactoryUtil.getSqlSessionFactory();
+		SqlSession sqlSession = sqlSessionFactory.openSession();
+		// 创建UserMapper代理对象
+		UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
+		userMapper.addUser(user);
+		sqlSession.commit();
+		sqlSession.close();
 		return "redirect:/user/main";
 	}
 

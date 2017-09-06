@@ -25,10 +25,10 @@
 		values(#{username},#{password},#{email})
 	</insert>
 	
-	<insert id="addUser" parameterType="com.ahhf.ljxbw.ihad.entity.User" >
-	<selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">  
+	<insert id="addUser" parameterType="com.ahhf.ljxbw.ihad.entity.User"  useGeneratedKeys="true" keyProperty="id" >
+	<!-- <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">  
         select LAST_INSERT_ID()   
-    </selectKey>  
+    </selectKey>   -->
 		insert into user(username,password,sequence,createDateTime,status,email)values(#{username},#{password},#{sequence},#{createDateTime},#{status},#{email})
 	</insert>
 
