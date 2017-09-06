@@ -54,11 +54,12 @@
                     <div class="item col-xs-12">
                         <span class="intelligent-label f-fl"><b class="ftx04">*</b>手机号：</span>    
                         <div class="f-fl item-ifo">
-                            <input type="text" class="txt03 f-r3 required" keycodes="tel" tabindex="2" data-valid="isNonEmpty||isPhone" data-error="手机号码不能为空||手机号码格式不正确" maxlength="11" id="telPhoneNumber" value="15156980156" /> 
+                        <sf:input path="phonenumber"  class="txt03 f-r3 required" keycodes="tel" tabindex="2" data-valid="isNonEmpty||isPhone" data-error="手机号码不能为空||手机号码格式不正确" maxlength="11" id="telPhoneNumber" value="15156980156"  />
                             <span class="ie8 icon-close close hide"></span>                           
                             <label class="icon-sucessfill blank hide"></label>
                             <label class="focus">请填写11位有效的手机号码</label>
                             <label class="focus valid"></label>
+                            <sf:errors path="phonenumber" />
                         </div>
                     </div>
                     <div class="item col-xs-12">

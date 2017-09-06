@@ -25,6 +25,7 @@ public class User {
 	private Integer id;
 	private String username;
 	private String password;
+	private String phonenumber;
 	private String token;
 	private int sequence;
 	private String email;
@@ -64,7 +65,7 @@ public class User {
 		this.username = username;
 	}
 
-//	@Size(min = 6, max = 10, message = "密码的长度应该在6和10之间")
+	@Size(min = 6, max = 10, message = "密码的长度应该在6和10之间")
 	public String getPassword() {
 		return password;
 	}
@@ -81,8 +82,8 @@ public class User {
 		this.sequence = sequence;
 	}
 
-//	@NotEmpty(message = "邮箱不能为空")
-//	@Email(message = "邮箱格式不正确")
+	@NotEmpty(message = "邮箱不能为空")
+	@Email(message = "邮箱格式不正确")
 	public String getEmail() {
 		return email;
 	}
@@ -106,6 +107,12 @@ public class User {
 		this.createDateTime = createDateTime;
 	}
 
+	public String getPhonenumber() {
+		return phonenumber;
+	}
+	public void setPhonenumber(String phonenumber) {
+		this.phonenumber = phonenumber;
+	}
 	@JsonIgnore
 	public String getUpdateDateTime() {
 		return updateDateTime;

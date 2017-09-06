@@ -29,7 +29,7 @@
 	<!-- <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">  
         select LAST_INSERT_ID()   
     </selectKey>   -->
-		insert into user(username,password,sequence,createDateTime,status,email)values(#{username},#{password},#{sequence},#{createDateTime},#{status},#{email})
+		insert into user(username,password,sequence,createDateTime,status,email,phonenumber)values(#{username},#{password},#{sequence},#{createDateTime},#{status},#{email},#{phonenumber})
 	</insert>
 
 	<update id="updateUser" parameterType="com.ahhf.ljxbw.ihad.entity.User">
