@@ -197,11 +197,31 @@
 $(function(){	
 	//第一页的确定按钮
 	$("#btn_part1").click(function(){						
-		if(!verifyCheck._click()) return;
+		/* if(!verifyCheck._click()) return;
 		$(".part1").hide();
 		$(".part2").show();
-		$(".step li").eq(1).addClass("on");
+		$(".step li").eq(1).addClass("on"); */
+		var phoneNumber = $("#telPhoneNumber").val();
 		$("#iphone").html($("#telPhoneNumber").val());
+		 $.ajax({
+				type:"post",
+				url:"${pageContext.request.contextPath}/user/findPhoneNumber",
+				data:{"phoneNumber":phoneNumber,
+				},
+				dataType:"json",
+				cache:"false",
+				timeout:8000,
+				success:function(data){
+					alert("000000");
+					layer.msg("11111");
+					
+				},
+				error:function(e){
+					alert("11111");
+					layer.msg("发生错误或超时！");
+				}
+		 	});
+		
 	});
 	//第二页的确定按钮
 	$("#btn_part2").click(function(){			

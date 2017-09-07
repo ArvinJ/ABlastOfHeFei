@@ -11,7 +11,10 @@
 		select username,password,sequence,createDateTime,updateDateTime,status
 		from user where id=#{id}
 	</select>
-
+	
+	<select id="findUserByPhoneNumber" parameterType="string" resultType="com.ahhf.ljxbw.ihad.entity.User">
+		select username,password,sequence,status from user where user.phonenumber = #{phonenumber}
+	</select>
 	<select id="findUserByName" parameterType="string" resultType="com.ahhf.ljxbw.ihad.entity.User">
 		select username,password,sequence,status from user where user.username = #{username}
 	</select>

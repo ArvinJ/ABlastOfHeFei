@@ -222,6 +222,19 @@ public class UserController {
 		model.addAttribute("user", users1.get(username));
 		return "user/show";
 	}
+	@RequestMapping(value="/findPhoneNumber",method=RequestMethod.POST)
+	@ResponseBody
+	public Map<String, Object> findByPhoneNumber(String phoneNumber) throws Exception{
+		Map<String, Object> map = new HashMap<String, Object>();
+		User u = findUserMapper().findUserByPhoneNumber(phoneNumber);
+		if(u==null){
+			map.put("data", true);
+		}else{
+			map.put("data", false);
+		}
+		return map;
+	}
+	
 
 	@RequestMapping(value="/{username}",method=RequestMethod.GET,params="json")
 	@ResponseBody
